@@ -12,7 +12,7 @@ public class ConnBean {
 	PreparedStatement pstmt;
 	ResultSet rs;
 	Vector<studentVO> vlist = new Vector<studentVO>();
-	public ConnBean() {
+	public ConnBean() {   // DB에 연결하는 코드
 		try {
 			Class.forName(JDBC_DRIVER);
 			conn = DriverManager.getConnection(JDBC_URL, USER, PASSWORD);
@@ -22,7 +22,7 @@ public class ConnBean {
 		}
 	}
 	
-	public Vector getData() {
+	public Vector getData() {  // DB에 있는 데이터를 찾는 코드
 		try {
 			String sql = "select * from student";
 			pstmt = conn.prepareStatement(sql);

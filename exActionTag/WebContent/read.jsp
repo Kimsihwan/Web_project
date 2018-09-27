@@ -1,26 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
 <%@ page import = "java.util.*" %>
-
 <%@ page import = "exActionTag.studentVO" %>
 
 <html>
-
 <head>
-
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
 </head>
-
 <jsp:useBean id="item" scope="page" class="exActionTag.studentVO"/>
-
 <jsp:useBean id="dao" scope="page" class="exActionTag.studentDAO"/>
 
 <%
 
  request.setCharacterEncoding("UTF-8");
 
- List<studentVO> items = new ArrayList<studentVO>();
+ Vector<studentVO> items = new Vector<studentVO>();
 
  items = dao.selectStudent();
 
