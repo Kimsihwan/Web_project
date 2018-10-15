@@ -10,7 +10,7 @@ public class StudentDAOImpl implements StudentDAO {
 		String no = studentVO.getNo();
 		String name = studentVO.getName();
 		Class.forName("oracle.jdbc.driver.OracleDriver");
-		Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "201800001", "201800001");
+		Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "201412360", "201412360");
 		PreparedStatement pstmt = conn.prepareStatement("insert into student values(?,?)");
 		pstmt.setString(1, no);
 		pstmt.setString(2, name);
@@ -22,7 +22,7 @@ public class StudentDAOImpl implements StudentDAO {
 	public List<StudentVO> selectStudentList() throws Exception {
 		List<StudentVO> items = new ArrayList<StudentVO>();
 		Class.forName("oracle.jdbc.driver.OracleDriver");
-		Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "201800001", "201800001");
+		Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "201412360", "201412360");
 		PreparedStatement pstmt = conn.prepareStatement("select * from student");
 		ResultSet rs = pstmt.executeQuery();
 		while(rs.next()) {
